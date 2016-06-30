@@ -6,8 +6,7 @@ function getHostname(origin) {
   if (origin) {
     let start = origin.indexOf('://') + 3;
     if (start > 3) {
-      let end = origin.indexOf(':', start);
-      if (end < 0) { end = origin.indexOf('/', start); }
+      let end = origin.indexOf('/', start);
       if (end < 0) { end = origin.length; }
       return origin.substring(start, end);
     }

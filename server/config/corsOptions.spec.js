@@ -34,6 +34,7 @@ describe('cors options', ()=> {
   });
 
   it('should allow access to supported origins with a port', (done)=> {
+    config.cors.supportedHostnames = /my-awesome-app\.com\.au:8080/;
     corsOptions.origin('https://my-awesome-app.com.au:8080', (err, isOk)=> {
       expect(isOk).to.be.true;
       done();
