@@ -1,0 +1,40 @@
+{
+  "name": "flood-risk-api",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "opener http://localhost:9000 && nodemon server",
+    "test": "mocha server/**/*.spec.js --recursive --check-leaks --reporter min",
+    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha -- server/**/*.spec.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "compression": "^1.6.2",
+    "cors": "^2.7.1",
+    "express": "^4.14.0",
+    "express-validator": "^2.20.8",
+    "lodash": "^4.13.1",
+    "mongoose": "^4.5.2",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.4",
+    "mocha": "^2.5.3",
+    "nodemon": "^1.9.2",
+    "opener": "^1.4.1",
+    "sinon": "^1.17.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dennoa/flood-risk-api.git"
+  },
+  "author": "dennoa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dennoa/flood-risk-api/issues"
+  },
+  "homepage": "https://github.com/dennoa/flood-risk-api",
+  "engines": {
+    "node": "stable"
+  }
+}
