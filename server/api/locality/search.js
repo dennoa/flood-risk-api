@@ -2,6 +2,7 @@
 
 const respond = require('../../components/respond');
 const validationRules = require('./search.validationRules');
+const Locality = require('./locality.model');
 
 function validate(req) {
   return new Promise((resolve, reject)=> {
@@ -13,9 +14,7 @@ function validate(req) {
 }
 
 function findEntity(conditions) {
-  return new Promise((resolve, reject)=> {
-    resolve([{todo: 'need to get the data!'}]);
-  });
+  return Locality.find({ locality_name: new RegExp(conditions.locality_name, 'i') }).exec();
 }
 
 function search(req) {

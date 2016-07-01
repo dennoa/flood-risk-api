@@ -62,7 +62,7 @@ const swagger = _.merge({
       }
     }
   }
-}, require('./entity/swagger'));
+}, require('./locality/swagger'));
 
 module.exports = (req, res) => {
   res.status(200).send(swagger);

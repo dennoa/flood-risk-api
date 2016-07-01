@@ -1,15 +1,15 @@
 module.exports = {
   "paths": {
-    "/entity/search": {
+    "/locality/search": {
       "post": {
         "tags": ["flood-risk"],
         "summary": "Search for something",
-        "description": "Search for some entity",
+        "description": "Search for some locality",
         "parameters": [{
           "name": "conditions",
           "in": "body",
           "schema": {
-            "$ref": "#/definitions/entity/conditions"
+            "$ref": "#/definitions/locality/conditions"
           }
         }],
         "responses": {
@@ -18,7 +18,7 @@ module.exports = {
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/entity/something"
+                "$ref": "#/definitions/locality"
               }
             }
           },
@@ -39,24 +39,24 @@ module.exports = {
     }
   },
   "definitions": {
-    "entity/something": {
+    "locality": {
       "type": "object",
-      "description": "Something",
+      "description": "Locality",
       "properties": {
-        "todo": {
+        "locality_name": {
           "type": "string",
-          "description": "Don't have the data or schema yet"
+          "description": "The locality name"
         }
       }
     },
-    "entity/conditions": {
+    "locality/conditions": {
       "type": "object",
       "description": "Search for something",
-      "required":["todo"],
+      "required":["name"],
       "properties": {
-        "todo": {
+        "locality_name": {
           "type": "string",
-          "description": "Match all entities with this value. Could allow mongoose style search conditions"
+          "description": "Match localities by name"
         }
       }
     }
